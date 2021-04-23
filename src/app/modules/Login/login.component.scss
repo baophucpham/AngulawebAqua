@@ -1,0 +1,70 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image {
+  width: 536px;
+  height: 645px;
+}
+
+.centerView {
+  background-color: #FFFFFF;
+  width: 1363px;
+  height: 645px;
+  display: flex;
+}
+
+.form__login {
+  width: 100%;
+  margin: 154px;
+}
+
+.form__input {
+  margin-top: 50px;
+}
+
+mt-10 {
+  margin-top: 10px;
+}
+.contentLogin{
+  display: flex;
+  flex-direction: row;
+}
+.aqua {
+  color: #003DA5;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 56px;
+}
+.title{
+  font-weight: bold;
+  font-size: 56px;
+}
+.email{
+  width: 536px;
+  height: 60px;
+  border-radius: 4px;
+}
+.password{
+  width: 536px;
+  height: 60px;
+  border-radius: 4px;
+}
+.btnlogin{
+  width: 320px;
+  height: 56px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #003DA5;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.pi-email{
+  position: absolute;
+  margin-top: 17px;
+  margin-left: 5px;
+}
