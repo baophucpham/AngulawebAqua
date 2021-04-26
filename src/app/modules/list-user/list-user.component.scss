@@ -36,9 +36,10 @@
   width: 140px;
   height: 48px;
 }
-.statusdrop{
+::ng-deep .statusdrop{
   border-style: none;
-  margin-right: 32px;
+  margin-left: 32px;
+  height: 48px !important;
 }
 .calendar{
   width: 1516px;
@@ -53,4 +54,15 @@
 }
 .txttable{
   font-size: 16px;
+}
+::ng-deep .butn button {
+  background: #003DA5 ;
+  border-radius: 8px;
+  padding: 0 80px;
+  height: 45px;
+}
+::ng-deep .butn button:hover{
+  background: #003DA5 !important ;
+  border-color:#003DA5 !important ;
+
 }

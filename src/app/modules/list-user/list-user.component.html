@@ -8,12 +8,9 @@
       <button pButton type="button" label="Search" class="p-button-outlined btnsearch"></button>
     </div>
     <div class="dropdow">
+      <p-button label="New User" icon="pi pi-plus-circle" iconPos="left" class="butn"></p-button>
       <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [style]="{'minWidth': '240px'}"
-        class="statusdrop" placeholder="Select Status"></p-dropdown>
-      <div class="p-field  ">
-        <p-calendar [showIcon]="true" inputId="icon" class="calendar" [style]="{'minWidth': '449px'}">
-        </p-calendar>
-      </div>
+        class="statusdrop" placeholder="Select Role"></p-dropdown>
     </div>
   </div>
 
