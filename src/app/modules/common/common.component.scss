@@ -69,8 +69,6 @@
   width: 1516px;
   height: 80px;
   border-radius: 4px;
-  margin-top: 30px;
-  margin-left: 40px;
   box-shadow:
        inset
              0 0  0 2px rgb(255,255,255),
@@ -144,21 +142,25 @@
 }
 .txtSetting{
   font-size: 20px;
-  //font-family: Roboto;
+
 }
-.bodyRight2{
+.bodyRight2 {
   background-color: #FCFCFC;
-  width: 1516px;
-  //height: 900px;
   border-radius: 4px;
+  width: 1516px;
+  height: 92%;
+  padding: 20px;
   margin-top: 20px;
-  margin-left: 40px;
   box-shadow:
-       inset
-             0 0  0 2px rgb(255,255,255),
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
-  display: flex;
-  //justify-content: flex-end;
-  align-items: center;
-  padding-right: 20px;
+    inset 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  // display: flex;
+  // align-items: center;
+  padding: 20px;
+  // //justify-content: space-between;
 }
+.allbody{
+  padding: 40px;
+}
+
+

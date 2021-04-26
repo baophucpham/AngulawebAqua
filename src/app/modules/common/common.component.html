@@ -8,7 +8,7 @@
       </div>
       <div class="title">
         <img src="../../../assets/images/git-commit.png" class="ic-git">
-        <a class="content-leftmenu" routerLink="/list-PPC">List PPC</a>
+        <a class="content-leftmenu" [routerLink]="['/common/list-ppc']">List PPC</a>
       </div>
       <div class="frit-title">
         <img src="../../../assets/images/3 User.png" class="ic-User">
@@ -16,12 +16,12 @@
       </div>
       <div class="title">
         <img src="../../../assets/images/git-commit.png" class="ic-git">
-        <a class="content-leftmenu">List User</a>
+        <a class="content-leftmenu" [routerLink]="['/common/list-user']">List User</a>
       </div>
     </div>
   </div>
   <div class="allbody">
-    <div class="bodyRight">
+   <div class="bodyRight">
       <div class="name">
         <h5 class="nameUser">Pham Le Bao Phuc</h5>
         <h6 class="Role">Role : Manager</h6>
@@ -42,8 +42,7 @@
         </div>
       </div>
     </div>
-    <div class="bodyRight2">
-    </div>
-  </div>
-
+    <div class="bodyRight2" >
+    <router-outlet></router-outlet>
+</div>
 </div>

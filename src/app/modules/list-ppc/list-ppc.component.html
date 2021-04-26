@@ -1,64 +1,61 @@
-<div class="component">
-  <div class="left-menu">
-    <img src="../../../assets/images/logoAqua.png" class="logo">
-    <div class="p-text-center">
-      <div class="frit-title">
-        <img src="../../../assets/images/clipboard.png" class="clipboard">
-        <h4 class="content-leftmenu">Process Pending Case</h4>
-      </div>
-      <div class="title">
-        <img src="../../../assets/images/git-commit.png" class="ic-git">
-        <h4 class="content-leftmenu">List PPC</h4>
-      </div>
-      <div class="frit-title">
-        <img src="../../../assets/images/3 User.png" class="ic-User">
-        <h4 class="content-leftmenu">User Management</h4>
-      </div>
-      <div class="title">
-        <img src="../../../assets/images/git-commit.png" class="ic-git">
-        <h4 class="content-leftmenu">List User</h4>
-      </div>
+<div class="bodyAll">
+  <div class="header">
+    <div class="sreach">
+      <span class="p-input-icon-left ">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText placeholder="Search" class="txtsreach">
+      </span>
+      <button pButton type="button" label="Search" class="p-button-outlined btnsearch"></button>
     </div>
-  </div>
-  <div class="allbody">
-    <div class="bodyRight">
-      <div class="name">
-        <h5 class="nameUser">Pham Le Bao Phuc</h5>
-        <h6 class="Role">Role : Manager</h6>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">
-          <p-avatar label="P" size="large" shape="circle"></p-avatar>
-        </button>
-        <div class="dropdown-content">
-          <div class="dropdown-button">
-            <img src="../../../assets/images/Setting.png" class="setting">
-            <a class="txtSetting">Cài đặt</a>
-          </div>
-          <div class="dropdown-button">
-            <img src="../../../assets/images/icon-power.png" class="setting">
-            <a class="txtSetting">Log out</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bodyRight2">
-      <div>
-        <span class="p-input-icon-left ">
-          <i class="pi pi-search"></i>
-          <input type="text" pInputText placeholder="Search" class="txtSearch">
-        </span>
-        <button pButton type="button" label="Search" class="p-button-outlined Search"></button>
-      </div>
-      <div class="bodyRight3">
-        <p-multiSelect defaultLabel="Select Status" optionLabel="name">
-        </p-multiSelect>
-
-        <div class="p-field  ">
-          <p-calendar [showIcon]="true" inputId="icon" class="calendar"></p-calendar>
-        </div>
+    <div class="dropdow">
+      <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [style]="{'minWidth': '240px'}"
+        class="statusdrop" placeholder="Select Status"></p-dropdown>
+      <div class="p-field  ">
+        <p-calendar [showIcon]="true" inputId="icon" class="calendar" [style]="{'minWidth': '449px'}">
+        </p-calendar>
       </div>
     </div>
   </div>
 
+  <div class="table">
+    <p-table class="tablein" [paginator]="true" [rows]="10" [value]="products1" sortMode="multiple">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="User summited" class="txttable">User summited <p-sortIcon field="User summited">
+            </p-sortIcon>
+          </th>
+          <th pSortableColumn="SerialNumber">Serial Number <p-sortIcon field="SerialNumber"></p-sortIcon>
+          </th>
+          <th pSortableColumn="ModelName">Model Name <p-sortIcon field="ModelName"></p-sortIcon>
+          </th>
+          <th pSortableColumn="CustumerName">Custumer Name <p-sortIcon field="Custumername"></p-sortIcon>
+          </th>
+          <th pSortableColumn="Datesubmited">Date submited <p-sortIcon field="Datesubmited"></p-sortIcon>
+          </th>
+          <th pSortableColumn="WattingDay">Watting Day <p-sortIcon field="WattingDay"></p-sortIcon>
+          </th>
+          <th pSortableColumn="Staus">Staus <p-sortIcon field="Staus"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>{{product.usersummited}}</td>
+
+          <td>{{product.serialnumber}}</td>
+
+          <td>{{product.modelname}} </td>
+
+          <td>{{product.custumername}}</td>
+
+          <td>{{product.datesubmit}} </td>
+
+          <td>{{product.status}}</td>
+
+          <td>{{product.waittingday}}</td>
+
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>

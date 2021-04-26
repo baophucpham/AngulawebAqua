@@ -99,3 +99,233 @@ export const detailResult = {
     }
   ]
 };
+export const ListPPc = {
+  product:[
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "Approved"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "In Progress"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "Rejected"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "Caneled"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "Approved"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "In Progress"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "Rejected"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "Caneled"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "Approved"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "In Progress"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "Rejected"
+    },
+    {
+      usersummited: "Phạm Lê Bảo Phúc",
+      serialnumber: "URDHH25113RTDF",
+      modelname: "FGH TV K600 Seri",
+      custumername: "Huỳnh Ngọc vinh",
+      datesubmit: "11/3/2021",
+      waittingday: "20 Huors",
+      status : "Caneled"
+    }
+  ]
+}
+export const ListUser ={
+  User: [
+    {
+      Username: "Huỳnh Ngọc Vinh",
+      Email: "vinhhuynh@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Phạm Lê Bảo Phúc",
+      Email: "baophuc@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Nguyễn Quốc Anh Minh",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"User"
+    },
+    {
+      Username: "Huỳnh Ngọc Vinh",
+      Email: "vinhhuynh@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"User"
+    },
+    {
+      Username: "Nguyễn Quốc Anh Minh",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Phạm Lê Bảo Phúc",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"User"
+    },
+    {
+      Username: "Huỳnh Ngọc Vinh",
+      Email: "vinhhuynh@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Nguyễn Quốc Anh Minh",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Phạm Lê Bảo Phúc",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"User"
+    },
+    {
+      Username: "Huỳnh Ngọc Vinh",
+      Email: "vinhhuynh@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Nguyễn Quốc Anh Minh",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Phạm Lê Bảo Phúc",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"User"
+    },
+    {
+      Username: "Huỳnh Ngọc Vinh",
+      Email: "vinhhuynh@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Nguyễn Quốc Anh Minh",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Phạm Lê Bảo Phúc",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"User"
+    },
+    {
+      Username: "Huỳnh Ngọc Vinh",
+      Email: "vinhhuynh@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Nguyễn Quốc Anh Minh",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+    {
+      Username: "Phạm Lê Bảo Phúc",
+      Email: "minhbeo@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"User"
+    },
+    {
+      Username: "Huỳnh Ngọc Vinh",
+      Email: "vinhhuynh@gmail.cmc.com",
+      Phone: "0978546623",
+      Role:"Admin"
+    },
+  ]
+}
