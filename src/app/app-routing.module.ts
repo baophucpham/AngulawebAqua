@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'common',
-    loadChildren: () => import('./modules/common/common.module').then(m => m.CommonModule)
+    loadChildren: () => import('./modules/common/common.module').then(m => m.CustomCommonModule)
   },
   {
     path: '**',

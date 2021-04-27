@@ -1,8 +1,8 @@
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { detailResult, ListUser } from './../../mocks/data';
-import { User } from './user';
+import { detailResult, ListUser,ListModal } from './../../mocks/data';
+import { User, modal } from './user';
 import { delay, tap, map } from 'rxjs/operators';
 
 @Injectable()
@@ -48,6 +48,10 @@ export class UserService {
 
   mockApi(): Observable<any> {
     return of (ListUser).pipe(delay(1000), map(res => res.User.map(u => new User(u))))
+  }
+
+  mApi(): Observable<any>{
+    return of (ListModal).pipe(delay(1000),map(res => res.modal.map(m => new modal(m))))
   }
 
     // getProductsSmall() {

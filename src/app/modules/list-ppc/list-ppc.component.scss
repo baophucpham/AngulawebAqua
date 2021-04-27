@@ -49,11 +49,162 @@
 .table{
   width: 100%;
   //background-color: red;
-  margin-top: 32px;
+  margin-top: 27px;
 }
 .tablein{
   width: 1154px;
+  height: 70%;
 }
 .txttable{
   font-size: 16px;
+}
+.eyebtn{
+  //background-color:red;
+  margin-top: 20px;
+  border-bottom: 1px solid #E9ECEF;
+  display: flex;
+  justify-content: space-around;
+}
+.outofstock {
+  font-weight: 700;
+  color: #EB5757;
+  //text-decoration: line-through;
+}
+
+.lowstock {
+  font-weight: 700;
+  color: #F1C12D;
+}
+
+.instock {
+  font-weight: 700;
+  color: #27AE60;
+}
+.motostock {
+  font-weight: 700;
+  color: #BDBDBD;
+}
+
+:host ::ng-deep .row-accessories {
+  background-color: rgba(0,0,0,.15) !important;
+}
+.stastuspopup{
+  font-size: 16px;
+  color: #333333;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.styStatus2 {
+  margin-bottom: 16px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+ }
+ .statusCreateNew {
+  color: #4F4F4F;
+  font-size: 16px;
+  font-weight: bold;
+}
+.bodyHeader {
+  padding-right: 28px;
+}
+
+.txtmodal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.name {
+  margin-top: 13px;
+  margin-right: 20px;
+}
+
+.inputName {
+  width: 230px;
+  height: 44px;
+  border-radius: 4px;
+}
+
+.AllBodyHaeder {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 20px;
+}
+
+.statusbodyModal {
+  margin-top: 36px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.card-table {
+  padding-left: 20px;
+  //background-color: #F8F9FA;
+  border-radius: 8px;
+  border-style: none;
+}
+.imageRedvoid{
+  width: 250px;
+  height: 130px;
+}
+.Evidence{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Validation{
+  background-color: #EDEDED;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding:20px
+}
+.inputtxext{
+  width: 530px;
+  height: 44px;
+  border-radius: 4px;
+  margin-top: 12px;
+}
+.inputtxext2{
+  width: 200px;
+  height: 44px;
+  border-radius: 4px;
+  margin-top: 12px;
+}
+.note{
+  width: 100%;
+  border-radius: 8px;
+}
+.any{
+  display: flex;
+  flex-direction: row;
+  margin-left: 16px;
+}
+.ava{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #BDBDBD;
+  line-height: 2px;
+  margin-bottom: 16px;
+}
+.footerAvata{
+  margin-bottom: 8px;
+}
+.buttomfooter{
+  display: flex;
+  justify-content: center;
+}
+.buttonreject{
+  width: 206px;
+  height: 56px;
+  margin-right: 30px;
+  border-radius: 8px;
+}
+ .buttonsubmit {
+  background: #27AE60;
+  border-radius: 8px;
+  height: 56px;
+  width: 206px;
 }

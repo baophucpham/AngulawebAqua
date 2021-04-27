@@ -1,4 +1,5 @@
 export class Product {
+  id?:string;
   usersummited?:string;
   serialnumber?:string;
   modelname?:string;
@@ -8,6 +9,7 @@ export class Product {
   waittingday?:string;
 
   constructor(data: any) {
+    this.id = data.id;
     this.usersummited = data.usersummited;
     this.serialnumber = data.serialnumber;
     this.modelname = data.modelname;

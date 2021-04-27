@@ -21,6 +21,7 @@ export class ListPPCComponent implements OnInit {
   cities: City[] = [];
   selectedCity: City[]=[];
   products1: Product[] = [];
+  displayDetailPPC: boolean = false;
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
@@ -34,5 +35,8 @@ export class ListPPCComponent implements OnInit {
       this.products1 = res;
       console.log(this.products1);
     });
+  }
+  showModal() {
+    this.displayDetailPPC = true;
   }
 }

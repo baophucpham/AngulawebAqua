@@ -18,6 +18,13 @@ import { ProductService } from '../list-ppc/productservice';
 import { ListUserComponent } from './../list-user/list-user.component';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { UserService } from '../list-user/userservice';
+import { DialogModule } from 'primeng/dialog';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { CommonModule } from '@angular/common';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+
+
+
 @NgModule({
   imports: [
     TieredMenuModule,
@@ -34,10 +41,14 @@ import { UserService } from '../list-user/userservice';
     InputTextModule,
     TableModule,
     HttpClientModule,
-    CascadeSelectModule
+    CascadeSelectModule,
+    DialogModule,
+    InputSwitchModule,
+    CommonModule,
+    InputTextareaModule
   ],
   declarations: [CommonComponent, ListPPCComponent,ListUserComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ProductService,UserService]
 })
-export class CommonModule {}
+export class CustomCommonModule {}

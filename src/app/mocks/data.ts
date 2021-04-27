@@ -102,6 +102,7 @@ export const detailResult = {
 export const ListPPc = {
   product:[
     {
+      id:1,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -111,6 +112,7 @@ export const ListPPc = {
       status : "Approved"
     },
     {
+      id:2,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -120,6 +122,7 @@ export const ListPPc = {
       status : "In Progress"
     },
     {
+      id:3,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -129,6 +132,7 @@ export const ListPPc = {
       status : "Rejected"
     },
     {
+      id:4,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -138,6 +142,7 @@ export const ListPPc = {
       status : "Caneled"
     },
     {
+      id:5,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -147,6 +152,7 @@ export const ListPPc = {
       status : "Approved"
     },
     {
+      id:6,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -156,6 +162,7 @@ export const ListPPc = {
       status : "In Progress"
     },
     {
+      id:7,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -165,6 +172,7 @@ export const ListPPc = {
       status : "Rejected"
     },
     {
+      id:8,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -174,6 +182,7 @@ export const ListPPc = {
       status : "Caneled"
     },
     {
+      id:9,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -183,6 +192,7 @@ export const ListPPc = {
       status : "Approved"
     },
     {
+      id:10,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -192,6 +202,7 @@ export const ListPPc = {
       status : "In Progress"
     },
     {
+      id:11,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -201,6 +212,7 @@ export const ListPPc = {
       status : "Rejected"
     },
     {
+      id:12,
       usersummited: "Phạm Lê Bảo Phúc",
       serialnumber: "URDHH25113RTDF",
       modelname: "FGH TV K600 Seri",
@@ -214,118 +226,225 @@ export const ListPPc = {
 export const ListUser ={
   User: [
     {
+      id:1,
       Username: "Huỳnh Ngọc Vinh",
       Email: "vinhhuynh@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:2,
       Username: "Phạm Lê Bảo Phúc",
       Email: "baophuc@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:3,
       Username: "Nguyễn Quốc Anh Minh",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"User"
     },
     {
+      id:4,
       Username: "Huỳnh Ngọc Vinh",
       Email: "vinhhuynh@gmail.cmc.com",
       Phone: "0978546623",
       Role:"User"
     },
     {
+      id:5,
       Username: "Nguyễn Quốc Anh Minh",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:6,
       Username: "Phạm Lê Bảo Phúc",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"User"
     },
     {
+      id:7,
       Username: "Huỳnh Ngọc Vinh",
       Email: "vinhhuynh@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:8,
       Username: "Nguyễn Quốc Anh Minh",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:9,
       Username: "Phạm Lê Bảo Phúc",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"User"
     },
     {
+      id:10,
       Username: "Huỳnh Ngọc Vinh",
       Email: "vinhhuynh@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:11,
       Username: "Nguyễn Quốc Anh Minh",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:12,
       Username: "Phạm Lê Bảo Phúc",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"User"
     },
     {
+      id:13,
       Username: "Huỳnh Ngọc Vinh",
       Email: "vinhhuynh@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:14,
       Username: "Nguyễn Quốc Anh Minh",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:15,
       Username: "Phạm Lê Bảo Phúc",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"User"
     },
     {
+      id:16,
       Username: "Huỳnh Ngọc Vinh",
       Email: "vinhhuynh@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:17,
       Username: "Nguyễn Quốc Anh Minh",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
     },
     {
+      id:18,
       Username: "Phạm Lê Bảo Phúc",
       Email: "minhbeo@gmail.cmc.com",
       Phone: "0978546623",
       Role:"User"
     },
     {
+      id:19,
       Username: "Huỳnh Ngọc Vinh",
       Email: "vinhhuynh@gmail.cmc.com",
       Phone: "0978546623",
       Role:"Admin"
+    },
+  ]
+}
+export const ListModal ={
+  modal: [
+    {
+      id:1,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"Aproved"
+    },
+    {
+      id:2,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"Aproved"
+    },
+    {
+      id:3,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"Rejected"
+    },
+    {
+      id:4,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"In Progress"
+    },
+    {
+      id:5,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"Aproved"
+    },
+    {
+      id:6,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"Aproved"
+    },
+    {
+      id:7,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"Rejected"
+    },
+    {
+      id:8,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"Rejected"
+    },
+    {
+      id:9,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"In Progress"
+    },
+    {
+      id:10,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"In Progress"
+    },
+    {
+      id:11,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"In Progress"
+    },
+    {
+      id:12,
+      serialnumber: "1562DCGFF824",
+      modalname: "TU LANH AQUA",
+      datesubmitted: "13/01/2021",
+      status:"In Progress"
     },
   ]
 }

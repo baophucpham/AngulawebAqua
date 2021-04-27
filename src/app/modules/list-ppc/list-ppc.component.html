@@ -18,10 +18,11 @@
   </div>
 
   <div class="table">
-    <p-table class="tablein" [paginator]="true" [rows]="10" [value]="products1" sortMode="multiple">
+    <p-table class="tablein" [paginator]="true" selectionMode="multiple" [rows]="10" [value]="products1"
+      sortMode="multiple">
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="User summited" class="txttable">User summited <p-sortIcon field="User summited">
+          <th pSortableColumn="User summited">User summited <p-sortIcon field="User summited">
             </p-sortIcon>
           </th>
           <th pSortableColumn="SerialNumber">Serial Number <p-sortIcon field="SerialNumber"></p-sortIcon>
@@ -34,28 +35,169 @@
           </th>
           <th pSortableColumn="WattingDay">Watting Day <p-sortIcon field="WattingDay"></p-sortIcon>
           </th>
-          <th pSortableColumn="Staus">Staus <p-sortIcon field="Staus"></p-sortIcon>
+          <th pSortableColumn="Staus">Status <p-sortIcon field="Staus"></p-sortIcon>
           </th>
+          <th></th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-product>
-        <tr>
+      <ng-template pTemplate="body" let-product let-rowIndex="rowIndex" class="fronttable">
+        <tr [pSelectableRow]="product" [pSelectableRowIndex]="rowIndex" (click)="showModal()">
           <td>{{product.usersummited}}</td>
-
           <td>{{product.serialnumber}}</td>
-
           <td>{{product.modelname}} </td>
-
           <td>{{product.custumername}}</td>
-
           <td>{{product.datesubmit}} </td>
-
-          <td>{{product.status}}</td>
-
           <td>{{product.waittingday}}</td>
-
+          <td>
+            <div
+              [ngClass]="{'outofstock': product.status === 'Rejected', 'lowstock': product.status === 'In Progress','instock': product.status ==='Approved', 'motostock':product.status ==='Caneled'}">
+              {{product.status}}
+            </div>
+          </td>
+          <div class='eyebtn'>
+            <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-rounded p-button-text"></button>
+          </div>
         </tr>
       </ng-template>
     </p-table>
   </div>
+  <p-dialog header="Admin Detail " [(visible)]="displayDetailPPC" [modal]="true" [style]="{width: '45%'}"
+    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <p class="stastuspopup">General Information</p>
+    <div class="AllBodyHaeder ">
+      <div class="bodyHeader">
+        <div class="txtmodal">
+          <p class="name">Model Name:</p>
+          <input class="inputName" type="text" pInputText>
+        </div>
+        <div class="txtmodal">
+          <p class="name">Serial Number:</p>
+          <input class="inputName" type="text" pInputText>
+        </div>
+        <div class="txtmodal">
+          <p class="name">Sell out Date:</p>
+          <input class="inputName" type="text" pInputText>
+        </div>
+      </div>
+      <div class="bodyHeader">
+        <div class="txtmodal">
+          <p class="name">Customer name:</p>
+          <input class="inputName" type="text" pInputText>
+        </div>
+        <div class="txtmodal">
+          <p class="name">Custumer phone:</p>
+          <input class="inputName" type="text" pInputText>
+        </div>
+        <div class="txtmodal">
+          <p class="name">Staus:</p>
+          <input class="inputName" type="text" pInputText>
+        </div>
+      </div>
+    </div>
+    <p class="stastuspopup">Evidence</p>
+    <div class="Evidence">
+      <div>
+        <p>Red void</p>
+        <img src="../../../assets/images/noImage.png" class="imageRedvoid">
+      </div>
+      <div>
+        <p>Serial Number</p>
+        <img src="../../../assets/images/noImage.png" class="imageRedvoid">
+      </div>
+      <div>
+        <p>Product</p>
+        <img src="../../../assets/images/noImage.png" class="imageRedvoid">
+      </div>
+    </div>
+    <p class="stastuspopup">Validation</p>
+    <div class="Validation">
+      <div >
+        <input class="inputtxext" type="text" pInputText>
+        <input class="inputtxext" type="text" pInputText>
+        <input class="inputtxext" type="text" pInputText>
+        <input class="inputtxext" type="text" pInputText>
+      </div>
+      <div>
+        <input class="inputtxext2" type="text" pInputText>
+        <input class="inputtxext2" type="text" pInputText>
+        <input class="inputtxext2" type="text" pInputText>
+        <input class="inputtxext2" type="text" pInputText>
+      </div>
+    </div>
+    <p class="stastuspopup">Note</p>
+    <textarea rows="7" cols="30" pInputTextarea class="note" aria-label="write"></textarea>
+    <p class="stastuspopup">Activity</p>
+    <div class="ava">
+      <p-avatar label="P" shape="circle" size= "large" class="footerAvata"></p-avatar>
+      <div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+      </div>
+    </div>
+    <div class="ava">
+      <p-avatar label="P" shape="circle" size= "large" class="footerAvata"></p-avatar>
+      <div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+      </div>
+    </div>
+    <div class="ava">
+      <p-avatar label="P" shape="circle" size= "large" class="footerAvata"></p-avatar>
+      <div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+      </div>
+    </div>
+    <div class="ava">
+      <p-avatar label="P" shape="circle" size= "large" class="footerAvata"></p-avatar>
+      <div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+        <div class="any">
+          <p>Username: </p>
+          <p>Freddie Mercurry</p>
+        </div>
+      </div>
+    </div>
+    <div class="buttomfooter">
+      <button pButton type="button" label="REJECT" icon="pi pi-times" class="p-button-danger buttonreject"></button>
+      <button pButton type="button" icon="pi pi-check-circle" iconPos="left" label="SUBMIT" class="buttonsubmit" ></button>
+    </div>
+  </p-dialog>
 </div>
