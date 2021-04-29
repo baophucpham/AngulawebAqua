@@ -226,3 +226,35 @@
 .timetext{
   padding-top: 4px;
 }
+.btnReject{
+  width: 276px;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  background-color: #EB5757;
+  border-style: none;
+  justify-content:center;
+  align-items:center;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+.btnsubmit{
+  width: 276px;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  background-color: #27AE60;
+  border-style: none;
+  justify-content:center;
+  align-items:center;
+  border-radius: 8px;
+}
+.statusr{
+  margin-top: 10px;
+  color: #FCFCFC
+}
+.icon{
+  margin-top: 2px;
+  margin-right: 10px;
+  color: #FCFCFC
+}

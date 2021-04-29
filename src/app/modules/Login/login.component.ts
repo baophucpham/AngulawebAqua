@@ -1,7 +1,5 @@
 
 import { Component } from "@angular/core";
-
-
 @Component({
   selector: 'app-login',
   templateUrl: "./login.component.html",
@@ -10,4 +8,12 @@ import { Component } from "@angular/core";
 
 export class LoginComponent {
   // hoten: string = "plbPhuc";
+  username: string = "";
+  password: string = "";
+
+  constructor() {}
+  ngOnInit() {
+    this.username = "";
+    this.password = "";
+  }
 }

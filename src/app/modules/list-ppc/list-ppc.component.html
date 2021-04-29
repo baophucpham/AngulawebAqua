@@ -21,8 +21,7 @@
     <p-table class="tablein" selectionMode="multiple" [paginator]="true"  [rows]="10" [value]="products1">
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="User summited">User summited <p-sortIcon field="User summited">
-            </p-sortIcon>
+          <th pSortableColumn="usersummited">User summited <p-sortIcon field="usersummited"></p-sortIcon>
           </th>
           <th pSortableColumn="SerialNumber">Serial Number <p-sortIcon field="SerialNumber"></p-sortIcon>
           </th>
@@ -195,8 +194,14 @@
       </div>
     </div>
     <div class="buttomfooter">
-      <button pButton type="button" label="REJECT" icon="pi pi-times" class="p-button-danger buttonreject"></button>
-      <button pButton type="button" icon="pi pi-check-circle" iconPos="left" label="SUBMIT" class="buttonsubmit" ></button>
+      <button class="btnReject">
+        <i class="pi pi-times icon" style="font-size: 20px"></i>
+        <h5 class="statusr">REJECT</h5>
+      </button>
+      <button class="btnsubmit">
+        <i class="pi pi-check-circle icon" style="font-size: 20px"></i>
+        <h5 class="statusr">SUBMIT</h5>
+      </button>
     </div>
   </p-dialog>
 </div>

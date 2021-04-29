@@ -7,21 +7,29 @@
         <h4 class="content-leftmenu">Process Pending Case</h4>
       </div>
       <div class="title">
-        <img src="../../../assets/images/git-commit.png" class="ic-git">
-        <a class="content-leftmenu" [routerLink]="['/common/list-ppc']">List PPC</a>
+        <button class="buton-leftmenu" [routerLink]="['/common/list-ppc']">
+          <div class="btnListUser">
+            <img src="../../../assets/images/git-commit.png" class="ic-git">
+            <p class="content-leftmenu" >List PPC</p>
+          </div>
+        </button>
       </div>
       <div class="frit-title">
         <img src="../../../assets/images/3 User.png" class="ic-User">
         <h4 class="content-leftmenu">User Management</h4>
       </div>
       <div class="title">
-        <img src="../../../assets/images/git-commit.png" class="ic-git">
-        <a class="content-leftmenu" [routerLink]="['/common/list-user']">List User</a>
+        <button class="buton-leftmenu" [routerLink]="['/common/list-user']">
+          <div class="btnListUser">
+            <img src="../../../assets/images/git-commit.png" class="ic-git">
+            <p class="content-leftmenu" >List User</p>
+          </div>
+        </button>
       </div>
     </div>
   </div>
   <div class="allbody">
-   <div class="bodyRight">
+    <div class="bodyRight">
       <div class="name">
         <h5 class="nameUser">Pham Le Bao Phuc</h5>
         <h6 class="Role">Role : Manager</h6>
@@ -42,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="bodyRight2" >
-    <router-outlet></router-outlet>
-</div>
-</div>
+    <div class="bodyRight2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

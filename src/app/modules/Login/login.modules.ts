@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { PasswordModule } from 'primeng/password';
 import { LoginRoutingModule } from './login-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,7 +15,6 @@ import { RippleModule } from 'primeng/ripple';
 import { CalendarModule } from 'primeng/calendar';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { LoginComponent } from './login.component';
-
 @NgModule({
   imports: [
     TieredMenuModule,
@@ -26,6 +27,8 @@ import { LoginComponent } from './login.component';
     CalendarModule,
     MultiSelectModule,
     LoginRoutingModule,
+    PasswordModule,
+    FormsModule
   ],
   declarations: [LoginComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

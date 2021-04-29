@@ -22,9 +22,8 @@ import { DialogModule } from 'primeng/dialog';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { CommonModule } from '@angular/common';
 import {InputTextareaModule} from 'primeng/inputtextarea';
-
-
-
+import {SelectButtonModule} from 'primeng/selectbutton';
+import {PasswordModule} from 'primeng/password';
 @NgModule({
   imports: [
     TieredMenuModule,
@@ -45,7 +44,9 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     DialogModule,
     InputSwitchModule,
     CommonModule,
-    InputTextareaModule
+    InputTextareaModule,
+    SelectButtonModule,
+    PasswordModule
   ],
   declarations: [CommonComponent, ListPPCComponent,ListUserComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

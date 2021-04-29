@@ -11,7 +11,7 @@
       <div class="form-group" style="margin-top: 20px;">
         <span class="p-input-icon-left">
           <img class="pi-email" src="../../../assets/images/mail.png" width="25px" height="25px">
-          <input type="text" class="p-inputtext-lg email" pInputText placeholder="Email">
+          <input type="text" class="p-inputtext-lg email" [(ngModel)]="username"  name="username" pInputText placeholder=" User name">
         </span>
 
       </div>
@@ -19,12 +19,11 @@
         <span class="p-input-icon-left p-input-icon-right">
           <i class="pi pi-lock"></i>
           <i class="pi pi-eye-slash"></i>
-          <input type="password" pInputText class="p-inputtext-lg password" placeholder="Password" />
+          <input type="password" pInputText class="p-inputtext-lg password" [(ngModel)]="password"  name="password" placeholder=" Password" />
         </span>
 
       </div>
       <button type="submit" class="btn btn-primary btnlogin"  routerLink='/common'>Login</button>
     </form>
-
   </div>
 </div>

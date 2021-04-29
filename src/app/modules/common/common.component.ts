@@ -15,6 +15,7 @@ export class CommonComponent implements OnInit {
   rangeDates: Date[] = [];
   minDate = new Date();
   maxDate = new Date();
+  checked: boolean = true;
   es: any;
   //invalidDates= Array<Date>;
 

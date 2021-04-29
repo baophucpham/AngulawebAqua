@@ -45,7 +45,7 @@
       </ng-template>
     </p-table>
   </div>
-  <p-dialog header="Admin Detail " [(visible)]="displayDialogAdmin" [modal]="true" [style]="{width: '60%'}" [baseZIndex]="10000"
+  <p-dialog header="Admin Detail " [(visible)]="displayDialogAdmin" [modal]="true" [style]="{width: '35%'}" [baseZIndex]="10000"
     [draggable]="false" [resizable]="false">
     <div class="headerM">
       <div class="headerMA">
@@ -55,7 +55,7 @@
           <button pButton pRipple type="button" label="Active" class="p-button-outlined p-button-success buttonsuccess"></button>
         </div>
       </div>
-      <div class="AllBodyHaeder w-100">
+      <div class="AllBodyHaeder">
         <div class="bodyHeader">
           <div class="txtmodal">
             <p class="name">Name:</p>
@@ -73,8 +73,6 @@
             <p class="name">ID Card:</p>
             <input class="inputName" type="text" pInputText >
           </div>
-        </div>
-        <div class="bodyHeader">
           <div class="txtmodal">
             <p class="name">Phone:</p>
             <input class="inputName" type="text" pInputText >
@@ -88,10 +86,24 @@
             <input class="inputName" type="text" pInputText >
           </div>
         </div>
+        <!-- <div class="bodyHeader">
+          <div class="txtmodal">
+            <p class="name">Phone:</p>
+            <input class="inputName" type="text" pInputText >
+          </div>
+          <div class="txtmodal">
+            <p class="name">Employee ID:</p>
+            <input class="inputName" type="text" pInputText >
+          </div>
+          <div class="txtmodal">
+            <p class="name">Status:</p>
+            <input class="inputName" type="text" pInputText >
+          </div>
+        </div> -->
       </div>
     </div>
-    <h3 class="statusbodyModal">PPC Activity Log</h3>
-    <div class="card card-table">
+    <!-- <h3 class="statusbodyModal">PPC Activity Log</h3> -->
+    <!-- <div class="card card-table">
       <p-table  sortMode="multiple" selectionMode="multiple" [paginator]="true" [rows]="10" [value]=" Modal1">
           <ng-template pTemplate="header">
               <tr>
@@ -100,7 +112,7 @@
                   <th pSortableColumn="category">Date Submitted<p-sortIcon field="category"></p-sortIcon></th>
                   <th pSortableColumn="quantity">Status<p-sortIcon field="quantity"></p-sortIcon></th>
                   <!-- <div class="fakeColum"></div> -->
-                  <th></th>
+                  <!-- <th></th>
           </ng-template>
           <ng-template pTemplate="body" let-modal let-rowIndex="rowIndex">
               <tr [pSelectableRow]="modal" [pSelectableRowIndex]="rowIndex">
@@ -117,7 +129,7 @@
               </tr>
           </ng-template>
       </p-table>
-  </div>
+  </div> -->
   </p-dialog>
   <p-dialog header="User Detail " [(visible)]="displayDialogUser" [modal]="true" [style]="{width: '60%'}" [baseZIndex]="10000"
     [draggable]="false" [resizable]="false">
@@ -227,18 +239,8 @@
         </div>
       </div>
       <div class="styStatus">
-        <p class="statusCreateNew">Bank</p>
-        <input class="nameNewUser">
-      </div>
-      <div class="styStatus2">
-        <div >
-          <p class="statusCreateNew">Account Number</p>
-          <input class="nameIDcard">
-        </div>
-        <div >
-          <p class="statusCreateNew">User Name</p>
-          <input class="namePhone">
-        </div>
+        <p class="statusCreateNew">Role</p>
+        <p-dropdown [style]="{'minWidth': '100%'}" ></p-dropdown>
       </div>
       <div class="styStatus2">
         <div >
@@ -251,9 +253,20 @@
         </div>
       </div>
       <div class="styStatus">
-        <p class="statusCreateNew">Role</p>
-        <input class="nameNewUser">
+        <p class="statusCreateNew">Bank</p>
+        <p-dropdown [style]="{'minWidth': '100%'}" ></p-dropdown>
       </div>
+      <div class="styStatus2">
+        <div >
+          <p class="statusCreateNew">Account Number</p>
+          <input class="nameIDcard">
+        </div>
+        <div >
+          <p class="statusCreateNew">User Name</p>
+          <input class="namePhone">
+        </div>
+      </div>
+
       <button class="btnSubmit">SUBMIT</button>
     </div>
   </p-dialog>
