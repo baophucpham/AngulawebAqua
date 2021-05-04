@@ -1,4 +1,5 @@
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { LoginRoutingModule } from './login-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
@@ -28,7 +29,9 @@ import { LoginComponent } from './login.component';
     MultiSelectModule,
     LoginRoutingModule,
     PasswordModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
   declarations: [LoginComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

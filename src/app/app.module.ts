@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AppComponent, SpinnerComponent],
+  declarations: [AppComponent, SpinnerComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,

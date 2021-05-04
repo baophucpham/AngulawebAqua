@@ -24,6 +24,7 @@ import { CommonModule } from '@angular/common';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {PasswordModule} from 'primeng/password';
+
 @NgModule({
   imports: [
     TieredMenuModule,

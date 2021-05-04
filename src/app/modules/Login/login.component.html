@@ -2,7 +2,7 @@
   <div class="centerView">
     <img src="../../../assets/images/loginImage.png" class="image">
 
-    <form class="form__login">
+    <form class="form__login" [formGroup]="loginForm">
       <div class="contentLogin">
         <h2 class="title">Sign in to</h2>
         <h2 class="aqua">AQUA</h2>
@@ -11,7 +11,10 @@
       <div class="form-group" style="margin-top: 20px;">
         <span class="p-input-icon-left">
           <img class="pi-email" src="../../../assets/images/mail.png" width="25px" height="25px">
-          <input type="text" class="p-inputtext-lg email" [(ngModel)]="username"  name="username" pInputText placeholder=" User name">
+          <input type="text" class="p-inputtext-lg email" [(ngModel)]="username" name="username" pInputText
+            placeholder=" User name" formControlName="userName" required>
+          <small id="username2-help" class="p-error"
+            *ngIf="loginForm.dirty && loginForm.controls.userName.errors">{{loginForm.controls.userName.errors.message}}</small>
         </span>
 
       </div>
@@ -19,11 +22,15 @@
         <span class="p-input-icon-left p-input-icon-right">
           <i class="pi pi-lock"></i>
           <i class="pi pi-eye-slash"></i>
-          <input type="password" pInputText class="p-inputtext-lg password" [(ngModel)]="password"  name="password" placeholder=" Password" />
+          <input type="password" pInputText class="p-inputtext-lg password" [(ngModel)]="password" name="password"
+            placeholder=" Password" formControlName="password" required>
+          <small id="username2-help" class="p-error"
+            *ngIf="loginForm.dirty && loginForm.controls.password.errors">{{loginForm.controls.password.errors.message}}</small>
         </span>
 
       </div>
-      <button type="submit" class="btn btn-primary btnlogin"  routerLink='/common'>Login</button>
+      <button type="submit" class="btn btn-primary btnlogin" routerLink='/common'
+        [disabled]="!loginForm.valid">Login</button>
     </form>
   </div>
 </div>
