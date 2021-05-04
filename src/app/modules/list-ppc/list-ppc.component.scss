@@ -1,4 +1,4 @@
-.bodyAll{
+.bodyAll {
   width: 100%;
   height: 80%;
   //background-color: red;
@@ -6,62 +6,61 @@
   // flex-direction: row;
   // justify-content: space-between;
 }
-.header{
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.dropdow{
+.dropdow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-style: none;
   border-radius: 8px;
-
 }
-.sreach{
+.sreach {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-style: none;
 }
-.txtsreach{
-  background-color: #EDEDED;
+.txtsreach {
+  background-color: #ededed;
   border-style: none;
   border-radius: 8px;
   width: 240px;
   height: 48px;
   margin-right: 20px;
 }
-.btnsearch{
+.btnsearch {
   border-radius: 8px;
-  color: #003DA5;
+  color: #003da5;
   width: 140px;
   height: 48px;
 }
-.statusdrop{
+.statusdrop {
   border-style: none;
   margin-right: 32px;
 }
-.calendar{
+.calendar {
   width: 1516px;
 }
-.table{
+.table {
   width: 100%;
   //background-color: red;
   margin-top: 27px;
 }
-.tablein{
+.tablein {
   width: 1154px;
   height: 70%;
 }
-.txttable{
+.txttable {
   font-size: 16px;
 }
-.eyebtn{
+.eyebtn {
   //background-color:red;
   // margin-top: 20px;
-  border-bottom: 1px solid #E9ECEF;
+  border-bottom: 1px solid #e9ecef;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,28 +69,28 @@
 }
 .outofstock {
   font-weight: 700;
-  color: #EB5757;
+  color: #eb5757;
   //text-decoration: line-through;
 }
 
 .lowstock {
   font-weight: 700;
-  color: #F1C12D;
+  color: #f1c12d;
 }
 
 .instock {
   font-weight: 700;
-  color: #27AE60;
+  color: #27ae60;
 }
 .motostock {
   font-weight: 700;
-  color: #BDBDBD;
+  color: #bdbdbd;
 }
 
 :host ::ng-deep .row-accessories {
-  background-color: rgba(0,0,0,.15) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
 }
-.stastuspopup{
+.stastuspopup {
   font-size: 16px;
   color: #333333;
   font-weight: bold;
@@ -99,12 +98,12 @@
 }
 .styStatus2 {
   margin-bottom: 16px;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
- }
- .statusCreateNew {
-  color: #4F4F4F;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.statusCreateNew {
+  color: #4f4f4f;
   font-size: 16px;
   font-weight: bold;
 }
@@ -147,114 +146,126 @@
   border-radius: 8px;
   border-style: none;
 }
-.imageRedvoid{
+.imageRedvoid {
   width: 250px;
   height: 130px;
 }
-.Evidence{
+.Evidence {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.Validation{
-  background-color: #EDEDED;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding:20px
+.Validation {
+  background-color: #ededed;
+  padding: 20px;
+
+  .validation-row {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    column-gap: 20px;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
 }
-.inputtxext{
-  width: 530px;
+.inputtxext-description,
+.inputtxext-status,
+.inputtxext-title {
   height: 44px;
   border-radius: 4px;
   margin-top: 12px;
 }
-.inputtxext2{
-  width: 200px;
-  height: 44px;
-  border-radius: 4px;
-  margin-top: 12px;
+
+.inputtxext-title {
+  border: 1px solid #ced4da;
+  background-color: white;
+  padding: 0.5rem;
 }
-.note{
+
+.inputtxext-status {
+  color: white;
+}
+
+.note {
   width: 100%;
   border-radius: 8px;
 }
-.any{
+.any {
   display: flex;
   flex-direction: row;
   margin-left: 16px;
   margin-top: 4px;
 }
-.any3{
+.any3 {
   display: flex;
   flex-direction: row;
   margin-left: 16px;
- align-items: center;
-
+  align-items: center;
 }
-.ava{
+.ava {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid #BDBDBD;
+  border-bottom: 1px solid #bdbdbd;
   line-height: 2px;
   margin-bottom: 16px;
 }
-.footerAvata{
+.footerAvata {
   margin-bottom: 8px;
 }
-.buttomfooter{
+.buttomfooter {
   display: flex;
   justify-content: center;
 }
-.buttonreject{
+.buttonreject {
   width: 206px;
   height: 56px;
   margin-right: 30px;
   border-radius: 8px;
 }
- .buttonsubmit {
-  background: #27AE60;
+.buttonsubmit {
+  background: #27ae60;
   border-radius: 8px;
   height: 56px;
   width: 206px;
 }
-.iconclock{
+.iconclock {
   margin-bottom: 10px;
   padding-right: 5px;
 }
-.timetext{
+.timetext {
   padding-top: 4px;
 }
-.btnReject{
+.btnReject {
   width: 276px;
   height: 56px;
   display: flex;
   flex-direction: row;
-  background-color: #EB5757;
+  background-color: #eb5757;
   border-style: none;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   border-radius: 8px;
   margin-right: 16px;
 }
-.btnsubmit{
+.btnsubmit {
   width: 276px;
   height: 56px;
   display: flex;
   flex-direction: row;
-  background-color: #27AE60;
+  background-color: #27ae60;
   border-style: none;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   border-radius: 8px;
 }
-.statusr{
+.statusr {
   margin-top: 10px;
-  color: #FCFCFC
+  color: #fcfcfc;
 }
-.icon{
+.icon {
   margin-top: 2px;
   margin-right: 10px;
-  color: #FCFCFC
+  color: #fcfcfc;
 }

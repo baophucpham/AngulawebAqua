@@ -26,6 +26,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { PasswordModule } from 'primeng/password';
 import { PPCService } from 'src/app/services/apis/ppc.service';
 import { DateCompactPipe } from 'src/app/pipes/date-pipe/date-compact.pipe';
+import { DateTimePipe } from 'src/app/pipes/date-pipe/date-time.pipe';
 
 @NgModule({
   imports: [
@@ -55,7 +56,8 @@ import { DateCompactPipe } from 'src/app/pipes/date-pipe/date-compact.pipe';
     CommonComponent,
     ListPPCComponent,
     ListUserComponent,
-    DateCompactPipe
+    DateCompactPipe,
+    DateTimePipe
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ProductService, UserService, PPCService]

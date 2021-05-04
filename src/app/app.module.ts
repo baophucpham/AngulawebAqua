@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { DateCompactPipe } from './pipes/date-pipe/date-compact.pipe';
+import { DateTimePipe } from './pipes/date-pipe/date-time.pipe';
 
 @NgModule({
   declarations: [AppComponent, SpinnerComponent],

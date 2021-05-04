@@ -37,6 +37,7 @@
           [style]="{ minWidth: '449px' }"
           selectionMode="range"
           [(ngModel)]="rangeDates"
+          (onClose)="handleGetListPPC()"
         >
         </p-calendar>
       </div>
@@ -86,7 +87,7 @@
         <tr
           [pSelectableRow]="ppc"
           [pSelectableRowIndex]="rowIndex"
-          (click)="showModal()"
+          (click)="showModal(ppc.id)"
         >
           <td>{{ ppc.userSubmited }}</td>
           <td>{{ ppc.serialNumber }}</td>
@@ -120,7 +121,7 @@
     </p-table>
   </div>
   <p-dialog
-    header="Admin Detail "
+    header="PPC Detail "
     [(visible)]="displayDetailPPC"
     [modal]="true"
     [style]="{ width: '45%' }"
@@ -133,60 +134,103 @@
       <div class="bodyHeader">
         <div class="txtmodal">
           <p class="name">Model Name:</p>
-          <input class="inputName" type="text" pInputText />
+          <input
+            class="inputName"
+            type="text"
+            pInputText
+            [(ngModel)]="ppcDetailData.modelName"
+            (blur)="handleCheckValidate()"
+          />
         </div>
         <div class="txtmodal">
           <p class="name">Serial Number:</p>
-          <input class="inputName" type="text" pInputText />
+          <input
+            class="inputName"
+            type="text"
+            pInputText
+            [(ngModel)]="ppcDetailData.serialNumber"
+            (blur)="handleCheckValidate()"
+          />
         </div>
         <div class="txtmodal">
           <p class="name">Sell out Date:</p>
-          <input class="inputName" type="text" pInputText />
+          <p-calendar
+            [showIcon]="true"
+            class="inputName"
+            [(ngModel)]="ppcDetailData.selloutDate"
+            (onClose)="handleCheckValidate()"
+          >
+          </p-calendar>
         </div>
       </div>
       <div class="bodyHeader">
         <div class="txtmodal">
           <p class="name">Customer name:</p>
-          <input class="inputName" type="text" pInputText />
+          <input
+            class="inputName"
+            type="text"
+            pInputText
+            [(ngModel)]="ppcDetailData.customerName"
+            (blur)="handleCheckValidate()"
+          />
         </div>
         <div class="txtmodal">
-          <p class="name">Custumer phone:</p>
-          <input class="inputName" type="text" pInputText />
+          <p class="name">Customer phone:</p>
+          <input
+            class="inputName"
+            type="text"
+            pInputText
+            [(ngModel)]="ppcDetailData.customerPhone"
+            (blur)="handleCheckValidate()"
+          />
         </div>
         <div class="txtmodal">
           <p class="name">Staus:</p>
-          <input class="inputName" type="text" pInputText />
+          <input
+            disabled
+            class="inputName"
+            type="text"
+            pInputText
+            [(ngModel)]="ppcDetailData.status"
+          />
         </div>
       </div>
     </div>
     <p class="stastuspopup">Evidence</p>
     <div class="Evidence">
-      <div>
-        <p>Red void</p>
-        <img src="../../../assets/images/noImage.png" class="imageRedvoid" />
-      </div>
-      <div>
-        <p>Serial Number</p>
-        <img src="../../../assets/images/noImage.png" class="imageRedvoid" />
-      </div>
-      <div>
-        <p>Product</p>
-        <img src="../../../assets/images/noImage.png" class="imageRedvoid" />
+      <div *ngFor="let evidence of ppcDetailData.evidence">
+        <p>{{ evidence.category }}</p>
+        <img
+          [src]="
+            evidence.url ? evidence.url : '../../../assets/images/noImage.png'
+          "
+          class="imageRedvoid"
+        />
       </div>
     </div>
     <p class="stastuspopup">Validation</p>
     <div class="Validation">
-      <div>
-        <input class="inputtxext" type="text" pInputText />
-        <input class="inputtxext" type="text" pInputText />
-        <input class="inputtxext" type="text" pInputText />
-        <input class="inputtxext" type="text" pInputText />
+      <div class="validation-row">
+        <div class="inputtxext-title">Description</div>
+        <div class="inputtxext-title">Status</div>
       </div>
-      <div>
-        <input class="inputtxext2" type="text" pInputText />
-        <input class="inputtxext2" type="text" pInputText />
-        <input class="inputtxext2" type="text" pInputText />
-        <input class="inputtxext2" type="text" pInputText />
+      <div
+        class="validation-row"
+        *ngFor="let validation of ppcDetailData.validation"
+      >
+        <input
+          class="inputtxext-description"
+          type="text"
+          pInputText
+          [(ngModel)]="validation.description"
+        />
+        <input
+          class="inputtxext-status"
+          type="text"
+          pInputText
+          [(ngModel)]="validation.status"
+          [ngStyle]="{ 'background-color': '#' + validation.color }"
+        />
       </div>
     </div>
     <p class="stastuspopup">Note</p>
@@ -196,104 +240,39 @@
       pInputTextarea
       class="note"
       aria-label="write"
+      [(ngModel)]="ppcDetailData.note"
     ></textarea>
     <p class="stastuspopup">Activity</p>
-    <div class="ava">
+    <div class="ava" *ngFor="let activity of ppcDetailData.activity">
       <p-avatar
-        label="P"
+        [image]="activity.avatar"
         shape="circle"
         size="large"
         class="footerAvata"
       ></p-avatar>
       <div>
         <div class="any">
-          <p>Username :</p>
-          <p>Freddie Mercurry</p>
+          <p>Username: &nbsp;</p>
+          <p>{{ activity.createdBy }}</p>
         </div>
         <div class="any">
-          <p>Activity :</p>
-          <p>Reject Sell Out</p>
+          <p>Activity: &nbsp;</p>
+          <p>{{ activity.activity }}</p>
         </div>
         <div class="any3">
           <i class="pi pi-clock iconclock"></i>
-          <p class="timetext">12:00 21/4/2021</p>
-        </div>
-      </div>
-    </div>
-    <div class="ava">
-      <p-avatar
-        label="P"
-        shape="circle"
-        size="large"
-        class="footerAvata"
-      ></p-avatar>
-      <div>
-        <div class="any">
-          <p>Username :</p>
-          <p>Freddie Mercurry</p>
-        </div>
-        <div class="any">
-          <p>Activity :</p>
-          <p>Reject Sell Out</p>
-        </div>
-        <div class="any3">
-          <i class="pi pi-clock iconclock"></i>
-          <p class="timetext">12:00 21/4/2021</p>
-        </div>
-      </div>
-    </div>
-    <div class="ava">
-      <p-avatar
-        label="P"
-        shape="circle"
-        size="large"
-        class="footerAvata"
-      ></p-avatar>
-      <div>
-        <div class="any">
-          <p>Username :</p>
-          <p>Freddie Mercurry</p>
-        </div>
-        <div class="any">
-          <p>Activity :</p>
-          <p>Reject Sell Out</p>
-        </div>
-        <div class="any3">
-          <i class="pi pi-clock iconclock"></i>
-          <p class="timetext">12:00 21/4/2021</p>
-        </div>
-      </div>
-    </div>
-    <div class="ava">
-      <p-avatar
-        label="P"
-        shape="circle"
-        size="large"
-        class="footerAvata"
-      ></p-avatar>
-      <div>
-        <div class="any">
-          <p>Username :</p>
-          <p>Freddie Mercurry</p>
-        </div>
-        <div class="any">
-          <p>Activity :</p>
-          <p>Reject Sell Out</p>
-        </div>
-        <div class="any3">
-          <i class="pi pi-clock iconclock"></i>
-          <p class="timetext">12:00 21/4/2021</p>
+          <p class="timetext">{{ activity.createdAt | dateTime }}</p>
         </div>
       </div>
     </div>
     <div class="buttomfooter">
-      <button class="btnReject">
+      <button class="btnReject" (click)="handleUpdate('Rejected')">
         <i class="pi pi-times icon" style="font-size: 20px"></i>
         <h5 class="statusr">REJECT</h5>
       </button>
-      <button class="btnsubmit">
+      <button class="btnsubmit" (click)="handleUpdate('Approved')">
         <i class="pi pi-check-circle icon" style="font-size: 20px"></i>
-        <h5 class="statusr">SUBMIT</h5>
+        <h5 class="statusr">APPROVE</h5>
       </button>
     </div>
   </p-dialog>
