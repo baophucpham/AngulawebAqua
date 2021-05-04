@@ -21,9 +21,11 @@ import { UserService } from '../list-user/userservice';
 import { DialogModule } from 'primeng/dialog';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { CommonModule } from '@angular/common';
-import {InputTextareaModule} from 'primeng/inputtextarea';
-import {SelectButtonModule} from 'primeng/selectbutton';
-import {PasswordModule} from 'primeng/password';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { PasswordModule } from 'primeng/password';
+import { PPCService } from 'src/app/services/apis/ppc.service';
+import { DateCompactPipe } from 'src/app/pipes/date-pipe/date-compact.pipe';
 
 @NgModule({
   imports: [
@@ -49,8 +51,13 @@ import {PasswordModule} from 'primeng/password';
     SelectButtonModule,
     PasswordModule
   ],
-  declarations: [CommonComponent, ListPPCComponent,ListUserComponent],
+  declarations: [
+    CommonComponent,
+    ListPPCComponent,
+    ListUserComponent,
+    DateCompactPipe
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [ProductService,UserService]
+  providers: [ProductService, UserService, PPCService]
 })
 export class CustomCommonModule {}
