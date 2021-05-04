@@ -188,7 +188,7 @@
         </div>
       </div>
     </div>
-    <h3 class="statusbodyModal">PPC Activity Log</h3>
+    <!-- <h3 class="statusbodyModal">PPC Activity Log</h3>
     <div class="card card-table">
       <p-table  sortMode="multiple" selectionMode="multiple" [paginator]="true" [rows]="10" [value]=" Modal1">
           <ng-template pTemplate="header">
@@ -197,8 +197,8 @@
                   <th pSortableColumn="name">Model Name<p-sortIcon field="name"></p-sortIcon></th>
                   <th pSortableColumn="category">Date Submitted<p-sortIcon field="category"></p-sortIcon></th>
                   <th pSortableColumn="quantity">Status<p-sortIcon field="quantity"></p-sortIcon></th>
-                  <!-- <div class="fakeColum"></div> -->
-                  <th></th>
+                  <div class="fakeColum"></div> -->
+                  <!-- <th></th>
           </ng-template>
           <ng-template pTemplate="body" let-modal let-rowIndex="rowIndex">
               <tr [pSelectableRow]="modal" [pSelectableRowIndex]="rowIndex">
@@ -215,7 +215,7 @@
               </tr>
           </ng-template>
       </p-table>
-  </div>
+  </div> -->
   </p-dialog>
   <p-dialog header="Create New User " [(visible)]="displayNewUser" [modal]="true" [style]="{width: '35%'}" [baseZIndex]="10000"
     [draggable]="false" [resizable]="false" >
