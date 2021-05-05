@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { SelectItem, PrimeNGConfig } from 'primeng/api';
 import { User, modal } from './user';
@@ -11,8 +10,8 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { bank } from "src/app/models/bank.model";
-import { Listbank } from "src/app/services/apis/bank.service";
+import { bank } from 'src/app/models/bank.model';
+import { Listbank } from 'src/app/services/apis/bank.service';
 interface City {
   name: string;
   code: string;
@@ -52,7 +51,7 @@ export class ListUserComponent implements OnInit {
   constructor(
     private userService: ListUserService,
     private spinnerService: SpinnerService,
-    private listBanksService: Listbank,
+    private listBanksService: Listbank
   ) {}
 
   ngOnInit(): void {
@@ -100,26 +99,27 @@ export class ListUserComponent implements OnInit {
     this.listBanksService.getBank({}).subscribe((res) => {
       this.Bank = res;
       this.spinnerService.hide();
-    })
+    });
   }
 
   handleCreate(): void {
     this.spinnerService.show();
-    this.userService.postCreateUser(
-      this.username,
-      this.email,
-      this.usernamebank,
-      this.shopcode,
-      this.shopname,
-      this.roleid,
-      this.phone,
-      this.password,
-      this.idcard,
-      this.bankname,
-      this.accountnumber
-    ).subscribe(res => {
-      console.log(res);
-
-    });
+    this.userService
+      .postCreateUser(
+        this.username,
+        this.email,
+        this.usernamebank,
+        this.shopcode,
+        this.shopname,
+        this.roleid,
+        this.phone,
+        this.password,
+        this.idcard,
+        this.bankname,
+        this.accountnumber
+      )
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
 }
