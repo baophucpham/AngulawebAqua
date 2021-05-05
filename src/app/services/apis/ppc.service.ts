@@ -67,21 +67,14 @@ export class PPCService {
       .set('statusId', statusId || '');
     return this.http
       .get(`${this.baseUrl}/process-pending-case`, {
-        params: getParams,
-        headers: {
-          Authorization: this.accessToken
-        }
+        params: getParams
       })
       .pipe(map((res: any) => res.map((r: any) => new PPCItemModel(r))));
   }
 
   getPPCDetail(id: string): Observable<any> {
     return this.http
-      .get(`${this.baseUrl}/process-pending-case/${id}`, {
-        headers: {
-          Authorization: this.accessToken
-        }
-      })
+      .get(`${this.baseUrl}/process-pending-case/${id}`)
       .pipe(map((res: any) => new PPCDetailModel(res)));
   }
 
@@ -94,11 +87,7 @@ export class PPCService {
     serial_number: string;
   }): Observable<any> {
     return this.http
-      .post(`${this.baseUrl}/process-pending-case/validation`, data, {
-        headers: {
-          Authorization: this.accessToken
-        }
-      })
+      .post(`${this.baseUrl}/process-pending-case/validation`, data)
       .pipe(
         map((res: any) => res.map((r: any) => new PPCDetailValidationModel(r)))
       );
@@ -117,12 +106,7 @@ export class PPCService {
   }): Observable<any> {
     return this.http.put(
       `${this.baseUrl}/process-pending-case/${data.id}`,
-      data,
-      {
-        headers: {
-          Authorization: this.accessToken
-        }
-      }
+      data
     );
   }
 }
