@@ -1,3 +1,5 @@
+import { LoginService } from './login.service';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
@@ -31,9 +33,11 @@ import { LoginComponent } from './login.component';
     PasswordModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   declarations: [LoginComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [LoginService]
 })
 export class LoginModule {}

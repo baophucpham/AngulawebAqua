@@ -29,8 +29,8 @@
         </span>
 
       </div>
-      <button type="submit" class="btn btn-primary btnlogin" routerLink='/common'
-        [disabled]="!loginForm.valid">Login</button>
+      <button class="btn btn-primary btnlogin"
+        [disabled]="!loginForm.valid" (click)="handleLogin()">Login</button>
     </form>
   </div>
 </div>

@@ -1,3 +1,4 @@
+import { LoginService } from './../Login/login.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonComponent } from './common.component';
 import { TieredMenuModule } from 'primeng/tieredmenu';
@@ -26,6 +27,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { PasswordModule } from 'primeng/password';
 import { PPCService } from 'src/app/services/apis/ppc.service';
 import { DateCompactPipe } from 'src/app/pipes/date-pipe/date-compact.pipe';
+import { ListUserService } from 'src/app/services/apis/user.service';
+import { Listbank } from "src/app/services/apis/bank.service";
 
 @NgModule({
   imports: [
@@ -58,6 +61,6 @@ import { DateCompactPipe } from 'src/app/pipes/date-pipe/date-compact.pipe';
     DateCompactPipe
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [ProductService, UserService, PPCService]
+  providers: [ProductService, PPCService, ListUserService,Listbank]
 })
 export class CustomCommonModule {}

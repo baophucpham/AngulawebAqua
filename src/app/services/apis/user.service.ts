@@ -1,13 +1,12 @@
+import { map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { detailResult, ListPPc } from './../../mocks/data';
-import { delay, tap, map } from 'rxjs/operators';
-import { PPCModel } from 'src/app/models/ppc.model';
 import { environment } from 'environments/environment';
+import { ListUser } from "src/app/models/listUser.model";
 
 @Injectable()
-export class PPCService {
+export class ListUserService {
   status: string[] = ['OUTOFSTOCK', 'INSTOCK', 'LOWSTOCK'];
 
   productNames: string[] = [
@@ -45,28 +44,54 @@ export class PPCService {
 
   baseUrl = environment.baseUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getListPPC(params: {
+  getListUser(params: {
     keyWord?: string;
-    end?: string;
-    start?: string;
-    statusId?: string;
+    role?: string;
   }): Observable<any> {
-    const { end, keyWord, start, statusId } = params;
+    const { keyWord,role} = params;
     const getParams = new HttpParams()
       .set('keyWord', keyWord || '')
-      .set('end', end || '')
-      .set('start', start || '')
-      .set('statusId', statusId || '');
+      .set('role', role || '')
     return this.http
-      .get(`${this.baseUrl}/process-pending-case`, {
+      .get(`${this.baseUrl}/user`, {
         params: getParams,
         headers: {
           Authorization:
-            'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MSIsImF1dGgiOiJhZG1pbiIsImlhdCI6MTYyMDExOTY4MiwiZXhwIjoxNjIwMTI2ODgyfQ.vMZ70_8809uQ_zf3RJeG5g9tPUn4k1OLYUGjmjhgPyZpJx3juHa-iCtlT6-hmGEPFZ4z4Vnc8Vpm-RWdAqJ3YA'
+            'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MSIsImF1dGgiOiJhZG1pbiIsImlhdCI6MTYyMDEzMDg3NSwiZXhwIjoxNjIwMTM4MDc1fQ.JSb1aquICqaMn2pgy4yRzQZKL46WYgrCyROohrCVou6nGagdVFKyblA9eQ2vKUn1TKE2O9aydo8mqcTGcpeiOQ'
         }
       })
-      .pipe(map((res: any) => res.map((r: any) => new PPCModel(r))));
+      .pipe(map((res: any) => res.map((r: any) => new ListUser(r))));
   }
+
+  postCreateUser(
+    account_number: string,
+    bank_name: string,
+    email: string,
+    id_card: string,
+    password: string,
+    phone: any,
+    role_id: any,
+    shop_code: string,
+    shop_name: string,
+    user_name: string,
+    user_name_bank:string,
+  ) {
+    const bodyCreateRequest = {
+      account_number,
+      bank_name,
+      email,
+      id_card,
+      password,
+      phone,
+      role_id,
+      shop_code,
+      shop_name,
+      user_name,
+      user_name_bank,
+    }
+    return this.http.post<any>(`${environment.baseUrl}/user`, bodyCreateRequest);
+  }
+
 }
