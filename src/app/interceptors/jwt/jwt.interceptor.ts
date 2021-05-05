@@ -73,7 +73,7 @@ export class JwtInterceptor implements HttpInterceptor {
             return next.handle(request);
           }),
           catchError((err: any) => {
-            // Refesh token fail => refesh_token expire => logout user
+            // Refesh token fail => logout user
             this.refreshTokenInProgress = false;
             this.router.navigate(['/login']);
             return throwError(error);

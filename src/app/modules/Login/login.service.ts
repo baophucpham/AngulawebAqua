@@ -19,6 +19,14 @@ export class LoginService {
   }
 
   refreshToken(): Observable<any> {
-    return this.http.post(`${environment.baseUrl}/user/refresh-token`, {});
+    return this.http.post(
+      `${environment.baseUrl}/user/refresh-token`,
+      {},
+      {
+        headers: {
+          isRefreshToken: 'true'
+        }
+      }
+    );
   }
 }
