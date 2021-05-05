@@ -10,8 +10,15 @@
     <div class="dropdow">
       <p-button label="New User" icon="pi pi-plus-circle" iconPos="left" class="butn" (click)="showNewUser()">
       </p-button>
-      <p-dropdown [options]="UserOtion" [(ngModel)]="selectedUserId" optionLabel="name" optionValue="id"
-        [style]="{'minWidth': '240px'}" class="statusdrop" placeholder="Select Role" (onChange)="handleGetListUser()">
+      <p-dropdown
+      [options]="UserOtion"
+      [(ngModel)]="selectedUserId"
+      optionLabel="name"
+      optionValue="id"
+        [style]="{'minWidth': '240px'}"
+        class="statusdrop"
+        placeholder="Select Role"
+        (onChange)="handleGetListUser()">
       </p-dropdown>
     </div>
   </div>
@@ -33,195 +40,132 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-user let-rowIndex="rowIndex">
-        <tr [pSelectableRow]="user" [pSelectableRowIndex]="rowIndex" (click)="showDialog(user.role)">
+        <tr [pSelectableRow]="user" [pSelectableRowIndex]="rowIndex" (click)="showDialog(user.role, user.id)">
           <td>{{user.username}}</td>
           <td>{{user.email}}</td>
           <td>{{user.phone}}</td>
           <td>{{user.role}} </td>
           <div class="eyebtn">
-            <p-inputSwitch></p-inputSwitch>
-            <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-rounded p-button-text"></button>
+            <!-- <td class="text-center" style="width: 70px"> -->
+              <p-inputSwitch></p-inputSwitch>
+              <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-rounded p-button-text"></button>
+            <!-- </td> -->
           </div>
 
         </tr>
       </ng-template>
     </p-table>
   </div>
-  <p-dialog header="Admin Detail " [(visible)]="displayDialogAdmin" [modal]="true" [style]="{width: '35%'}"
+  <p-dialog header="Admin Detail" [(visible)]="displayDialogAdmin" [modal]="true" [style]="{width: '630px'}"
     [baseZIndex]="10000" [draggable]="false" [resizable]="false">
     <div class="headerM">
       <div class="headerMA">
         <img src="../../../assets/images/AvatarM.png" class="imagAvata">
         <div class="buttonimage">
-          <button pButton pRipple type="button" label="Edit"
-            class="p-button-outlined p-button-secondary buttonsecondary"></button>
-          <button pButton pRipple type="button" label="Active"
-            class="p-button-outlined p-button-success buttonsuccess"></button>
-        </div>
-      </div>
-      <div class="AllBodyHaeder">
-        <div class="bodyHeader">
-          <div class="txtmodal">
-            <p class="name">Name:</p>
-            <input class="inputName" type="text" pInputText>
-          </div>
-          <div class="txtmodal">
-            <p class="name">Email:</p>
-            <input class="inputName" type="text" pInputText>
-          </div>
-          <div class="txtmodal">
-            <p class="name">Role:</p>
-            <input class="inputName" type="text" pInputText>
-          </div>
-          <div class="txtmodal">
-            <p class="name">ID Card:</p>
-            <input class="inputName" type="text" pInputText>
-          </div>
-          <div class="txtmodal">
-            <p class="name">Phone:</p>
-            <input class="inputName" type="text" pInputText>
-          </div>
-          <div class="txtmodal">
-            <p class="name">Employee ID:</p>
-            <input class="inputName" type="text" pInputText>
-          </div>
-          <div class="txtmodal">
-            <p class="name">Status:</p>
-            <input class="inputName" type="text" pInputText>
-          </div>
-        </div>
-        <!-- <div class="bodyHeader">
-          <div class="txtmodal">
-            <p class="name">Phone:</p>
-            <input class="inputName" type="text" pInputText >
-          </div>
-          <div class="txtmodal">
-            <p class="name">Employee ID:</p>
-            <input class="inputName" type="text" pInputText >
-          </div>
-          <div class="txtmodal">
-            <p class="name">Status:</p>
-            <input class="inputName" type="text" pInputText >
-          </div>
-        </div> -->
-      </div>
-    </div>
-    <!-- <h3 class="statusbodyModal">PPC Activity Log</h3> -->
-    <!-- <div class="card card-table">
-      <p-table  sortMode="multiple" selectionMode="multiple" [paginator]="true" [rows]="10" [value]=" Modal1">
-          <ng-template pTemplate="header">
-              <tr>
-                  <th pSortableColumn="code">Serial Number<p-sortIcon field="code"></p-sortIcon></th>
-                  <th pSortableColumn="name">Model Name<p-sortIcon field="name"></p-sortIcon></th>
-                  <th pSortableColumn="category">Date Submitted<p-sortIcon field="category"></p-sortIcon></th>
-                  <th pSortableColumn="quantity">Status<p-sortIcon field="quantity"></p-sortIcon></th>
-                 <div class="fakeColum"></div> -->
-    <!-- <th></th>
-          </ng-template>
-          <ng-template pTemplate="body" let-modal let-rowIndex="rowIndex">
-              <tr [pSelectableRow]="modal" [pSelectableRowIndex]="rowIndex">
-                  <td>{{modal.serialnumber}}</td>
-                  <td>{{modal.modalname}}</td>
-                  <td>{{modal.datesubmitted}}</td>
-                  <td>
-                    <div [ngClass]="{'outofstock': modal.status === 'Rejected', 'lowstock': modal.status === 'In Progress','instock': modal.status ==='Aproved'}">
-                      {{modal.status}}
-                    </div>
-
-                  </td>
-                  <div class="eyebtn"><button pButton pRipple type="button" icon="pi pi-eye" class="p-button-rounded p-button-text"></button></div>
-              </tr>
-          </ng-template>
-      </p-table>
-  </div> -->
-  </p-dialog>
-  <p-dialog header="User Detail " [(visible)]="displayDialogUser" [modal]="true" [style]="{width: '60%'}"
-    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
-    <div class="headerM">
-      <div class="headerMA">
-        <img src="../../../assets/images/AvatarM.png" class="imagAvata">
-        <div class="buttonimage">
-          <button pButton pRipple type="button" label="Edit"
-            class="p-button-outlined p-button-secondary buttonsecondary"></button>
-          <button pButton pRipple type="button" label="Active"
-            class="p-button-outlined p-button-success buttonsuccess"></button>
+          <button pButton pRipple type="button" [label]="userDetailData.isActive ? 'Activated' : 'Inactivated'"
+            class="p-button-outlined p-button-success buttonsuccess w-100" (click)="handleUpdateUser(true)"></button>
         </div>
       </div>
       <div class="AllBodyHaeder w-100">
         <div class="bodyHeader">
           <div class="txtmodal">
             <p class="name">Name:</p>
-            <input class="inputName" type="text" pInputText>
+            <input class="inputName" type="text" pInputText disabled [(ngModel)]="userDetailData.userName">
           </div>
           <div class="txtmodal">
             <p class="name">Email:</p>
-            <input class="inputName" type="text" pInputText>
+            <input class="inputName" type="text" pInputText [(ngModel)]="userDetailData.email" (input)="isEditUserDetail = true">
           </div>
           <div class="txtmodal">
             <p class="name">Role:</p>
-            <input class="inputName" type="text" pInputText>
+            <input class="inputName" type="text" pInputText disabled [(ngModel)]="userDetailData.roleId">
+          </div>
+          <div class="txtmodal">
+            <p class="name">ID Card:</p>
+            <input class="inputName" type="text" pInputText [(ngModel)]="userDetailData.idCard" (input)="isEditUserDetail = true">
+          </div>
+          <div class="txtmodal">
+            <p class="name">Phone:</p>
+            <input class="inputName" type="text" pInputText [(ngModel)]="userDetailData.phone" (input)="isEditUserDetail = true">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dialog-control d-flex w-100 justify-content-end" *ngIf="isEditUserDetail">
+      <button pButton pRipple type="button" label="Cancel" class="p-button-danger mr-2" (click)="displayDialogAdmin = false"></button>
+      <button pButton pRipple type="button" label="Save" (click)="handleUpdateUser()"></button>
+    </div>
+  </p-dialog>
+  <p-dialog header="User Detail" [(visible)]="displayDialogUser" [modal]="true" [style]="{width: '60%'}"
+    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div class="headerM">
+      <div class="headerMA">
+        <img src="../../../assets/images/AvatarM.png" class="imagAvata">
+        <div class="buttonimage">
+          <button pButton pRipple type="button" [label]="userDetailData.isActive ? 'Activated' : 'Inactivated'"
+            class="p-button-outlined p-button-success buttonsuccess w-100" (click)="handleUpdateUser(true)"></button>
+        </div>
+      </div>
+      <div class="AllBodyHaeder w-100 two-column">
+        <div class="bodyHeader">
+          <div class="txtmodal">
+            <p class="name">Name:</p>
+            <input class="inputName" type="text" pInputText disabled [(ngModel)]="userDetailData.userName">
+          </div>
+          <div class="txtmodal">
+            <p class="name">Email:</p>
+            <input class="inputName" type="text" pInputText [(ngModel)]="userDetailData.email" (input)="isEditUserDetail = true">
+          </div>
+          <div class="txtmodal">
+            <p class="name">Role:</p>
+            <input class="inputName" type="text" pInputText disabled [(ngModel)]="userDetailData.roleId">
           </div>
           <div class="txtmodal">
             <p class="name">Shop Code:</p>
-            <input class="inputName" type="text" pInputText>
+            <input class="inputName" type="text" pInputText disabled [(ngModel)]="userDetailData.shopCode">
           </div>
           <div class="txtmodal">
             <p class="name">Shop Name:</p>
-            <input class="inputName" type="text" pInputText>
+            <input class="inputName" type="text" pInputText disabled [(ngModel)]="userDetailData.shopName">
           </div>
         </div>
         <div class="bodyHeader">
           <div class="txtmodal">
             <p class="name">Phone:</p>
-            <input class="inputName" type="text" pInputText>
+            <input class="inputName" type="text" pInputText [(ngModel)]="userDetailData.phone" (input)="isEditUserDetail = true">
           </div>
           <div class="txtmodal">
             <p class="name">ID Card:</p>
-            <input class="inputName" type="text" pInputText>
+            <input class="inputName" type="text" pInputText [(ngModel)]="userDetailData.idCard" (input)="isEditUserDetail = true">
           </div>
           <div class="txtmodal">
             <p class="name">Bank:</p>
-            <input class="inputName" type="text" pInputText>
+            <p-dropdown [style]="{'width': '100%'}"
+            class="inputName"
+            panelStyleClass="custom-panel-right-0"
+        [options]="Bank"
+        optionLabel="vn_name"
+        optionValue="vn_name"
+        (onChange)="selectedBank"
+         [(ngModel)]="userDetailData.bankName"
+         scrollHeight="160px"
+         placeholder="Select Bank" ></p-dropdown>
           </div>
           <div class="txtmodal">
             <p class="name">Account:</p>
-            <input class="inputName" type="text" pInputText>
+            <input class="inputName" type="text" pInputText [(ngModel)]="userDetailData.accountNumber" (input)="isEditUserDetail = true">
           </div>
           <div class="txtmodal">
             <p class="name">Username:</p>
-            <input class="inputName" type="text" pInputText>
+            <input class="inputName" type="text" pInputText [(ngModel)]="userDetailData.userNameBank" (input)="isEditUserDetail = true">
           </div>
         </div>
       </div>
     </div>
-    <!-- <h3 class="statusbodyModal">PPC Activity Log</h3>
-    <div class="card card-table">
-      <p-table  sortMode="multiple" selectionMode="multiple" [paginator]="true" [rows]="10" [value]=" Modal1">
-          <ng-template pTemplate="header">
-              <tr>
-                  <th pSortableColumn="code">Serial Number<p-sortIcon field="code"></p-sortIcon></th>
-                  <th pSortableColumn="name">Model Name<p-sortIcon field="name"></p-sortIcon></th>
-                  <th pSortableColumn="category">Date Submitted<p-sortIcon field="category"></p-sortIcon></th>
-                  <th pSortableColumn="quantity">Status<p-sortIcon field="quantity"></p-sortIcon></th>
-                  <div class="fakeColum"></div> -->
-    <!-- <th></th>
-          </ng-template>
-          <ng-template pTemplate="body" let-modal let-rowIndex="rowIndex">
-              <tr [pSelectableRow]="modal" [pSelectableRowIndex]="rowIndex">
-                  <td>{{modal.serialnumber}}</td>
-                  <td>{{modal.modalname}}</td>
-                  <td>{{modal.datesubmitted}}</td>
-                  <td>
-                    <div [ngClass]="{'outofstock': modal.status === 'Rejected', 'lowstock': modal.status === 'In Progress','instock': modal.status ==='Aproved'}">
-                      {{modal.status}}
-                    </div>
-
-                  </td>
-                  <div class="eyebtn"><button pButton pRipple type="button" icon="pi pi-eye" class="p-button-rounded p-button-text"></button></div>
-              </tr>
-          </ng-template>
-      </p-table>
-  </div> -->
+    <div class="dialog-control d-flex w-100 justify-content-end" *ngIf="isEditUserDetail">
+      <button pButton pRipple type="button" label="Cancel" class="p-button-danger mr-2" (click)="displayDialogUser = false"></button>
+      <button pButton pRipple type="button" label="Save"(click)="handleUpdateUser()"></button>
+    </div>
   </p-dialog>
   <p-dialog header="Create New User " [(visible)]="displayNewUser" [modal]="true" [style]="{width: '35%'}"
     [baseZIndex]="10000" [draggable]="false" [resizable]="false">
@@ -247,28 +191,38 @@
       <div class="styStatus">
         <p class="statusCreateNew">Role</p>
         <p-dropdown [style]="{'minWidth': '100%'}"
-        [options]="UserOtion" [(ngModel)]="roleid"
-        optionLabel="name" optionValue="id"
-          placeholder="Select Role"
-          (onChange)="handleGetListUser()"></p-dropdown>
+        [options]="UserOtion"
+        [(ngModel)]="roleid"
+        optionLabel="name"
+        optionValue="id"
+        placeholder="Select Role"
+        scrollHeight="100px"
+        (onChange)="handleChangeRole()"
+      ></p-dropdown>
       </div>
-      <div class="styStatus2">
+      <div class="styStatus2" *ngIf="showInfoForSO">
         <div>
           <p class="statusCreateNew">Shop Code</p>
-          <input class="nameIDcard" [(ngModel)]="shopcode">
+          <input #shopCodeInput class="nameIDcard" [(ngModel)]="shopcode" (blur)="getShopNameByShopCode()">
+          <small id="username2-help" class="p-error"
+            *ngIf="!isShopCodeValid">Shop code invalid!</small>
         </div>
         <div>
           <p class="statusCreateNew">Shop Name</p>
-          <input class="namePhone" [(ngModel)]="shopname">
+          <input class="namePhone" [(ngModel)]="shopname" disabled>
         </div>
       </div>
-      <div class="styStatus">
+      <div class="styStatus" *ngIf="showInfoForSO">
         <p class="statusCreateNew">Bank</p>
         <p-dropdown [style]="{'minWidth': '100%'}"
-        (onChange)="handleGetListBank()"
-         [(ngModel)]="bankname"></p-dropdown>
+        [options]="Bank"
+        optionLabel="vn_name"
+        optionValue="vn_name"
+        (onChange)="selectedBank"
+         [(ngModel)]="bankname"
+         placeholder="Select Bank" ></p-dropdown>
       </div>
-      <div class="styStatus2">
+      <div class="styStatus2" *ngIf="showInfoForSO">
         <div>
           <p class="statusCreateNew">Account Number</p>
           <input class="nameIDcard" [(ngModel)]="accountnumber">
@@ -279,7 +233,7 @@
         </div>
       </div>
 
-      <button class="btnSubmit" (click)="handleCreate()">SUBMIT</button>
+      <button class="btnSubmit" (click)="handleCreate()" >SUBMIT</button>
     </div>
   </p-dialog>
 </div>

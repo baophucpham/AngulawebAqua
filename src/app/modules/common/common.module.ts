@@ -28,7 +28,7 @@ import { PasswordModule } from 'primeng/password';
 import { PPCService } from 'src/app/services/apis/ppc.service';
 import { DateCompactPipe } from 'src/app/pipes/date-pipe/date-compact.pipe';
 import { ListUserService } from 'src/app/services/apis/user.service';
-import { Listbank } from 'src/app/services/apis/bank.service';
+import { CommonService } from "src/app/services/apis/common.service";
 import { DateTimePipe } from 'src/app/pipes/date-pipe/date-time.pipe';
 import { JwtInterceptor } from 'src/app/interceptors/jwt/jwt.interceptor';
 
@@ -66,15 +66,15 @@ import { JwtInterceptor } from 'src/app/interceptors/jwt/jwt.interceptor';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     ProductService,
-    UserService,
-    PPCService,
-    ListUserService,
-    Listbank,
-    {
+     PPCService,
+     ListUserService,
+     CommonService,
+     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true
     }
-  ]
+    ]
+
 })
 export class CustomCommonModule {}
