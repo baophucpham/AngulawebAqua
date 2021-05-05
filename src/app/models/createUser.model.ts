@@ -4,7 +4,7 @@ export class CreateUser{
   email: string;
   id_card: string;
   password: string;
-  phone: string;
+  phone: any;
   role_id: number;
   shop_code: string;
   shop_name: string;

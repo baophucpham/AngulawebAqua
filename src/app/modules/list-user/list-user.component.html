@@ -246,8 +246,11 @@
       </div>
       <div class="styStatus">
         <p class="statusCreateNew">Role</p>
-        <p-dropdown [style]="{'minWidth': '100%'}" [options]="UserOtion" [(ngModel)]="roleid" optionLabel="name" optionValue="id"
-          placeholder="Select Role" (onChange)="handleGetListUser()"></p-dropdown>
+        <p-dropdown [style]="{'minWidth': '100%'}"
+        [options]="UserOtion" [(ngModel)]="roleid"
+        optionLabel="name" optionValue="id"
+          placeholder="Select Role"
+          (onChange)="handleGetListUser()"></p-dropdown>
       </div>
       <div class="styStatus2">
         <div>
@@ -261,7 +264,9 @@
       </div>
       <div class="styStatus">
         <p class="statusCreateNew">Bank</p>
-        <p-dropdown [style]="{'minWidth': '100%'}" (onChange)="handleGetListBank()" [(ngModel)]="bankname"></p-dropdown>
+        <p-dropdown [style]="{'minWidth': '100%'}"
+        (onChange)="handleGetListBank()"
+         [(ngModel)]="bankname"></p-dropdown>
       </div>
       <div class="styStatus2">
         <div>
@@ -270,7 +275,7 @@
         </div>
         <div>
           <p class="statusCreateNew">User Name</p>
-          <input class="namePhone" [(ngModel)]="username">
+          <input class="namePhone" [(ngModel)]="usernamebank">
         </div>
       </div>
 
