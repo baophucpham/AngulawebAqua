@@ -63,10 +63,15 @@ export class ListPPCComponent implements OnInit {
           '',
         statusId: this.selectedPPCId || ''
       })
-      .subscribe(res => {
-        this.ppcList = res;
-        this.spinnerService.hide();
-      });
+      .subscribe(
+        res => {
+          this.ppcList = res;
+          this.spinnerService.hide();
+        },
+        error => {
+          this.spinnerService.hide();
+        }
+      );
   }
 
   getDateStringFromDateObject(date: Date): string {

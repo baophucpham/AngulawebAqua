@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { DateCompactPipe } from './pipes/date-pipe/date-compact.pipe';
 import { DateTimePipe } from './pipes/date-pipe/date-time.pipe';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './interceptors/jwt/jwt.interceptor';
 
 @NgModule({
   declarations: [AppComponent, SpinnerComponent],
@@ -17,9 +19,16 @@ import { DateTimePipe } from './pipes/date-pipe/date-time.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
