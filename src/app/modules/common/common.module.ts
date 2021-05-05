@@ -28,7 +28,7 @@ import { PasswordModule } from 'primeng/password';
 import { PPCService } from 'src/app/services/apis/ppc.service';
 import { DateCompactPipe } from 'src/app/pipes/date-pipe/date-compact.pipe';
 import { ListUserService } from 'src/app/services/apis/user.service';
-import { Listbank } from "src/app/services/apis/bank.service";
+import { CommonService } from "src/app/services/apis/common.service";
 import { DateTimePipe } from 'src/app/pipes/date-pipe/date-time.pipe';
 
 @NgModule({
@@ -63,6 +63,6 @@ import { DateTimePipe } from 'src/app/pipes/date-pipe/date-time.pipe';
     DateTimePipe
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [ProductService, PPCService, ListUserService,Listbank]
+  providers: [ProductService, PPCService, ListUserService,CommonService]
 })
 export class CustomCommonModule {}

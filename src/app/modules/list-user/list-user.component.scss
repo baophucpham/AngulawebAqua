@@ -118,10 +118,6 @@
   margin-top: 13px;
 }
 
-.bodyHeader {
-  padding-right: 28px;
-}
-
 .txtmodal {
   display: flex;
   flex-direction: row;
@@ -144,6 +140,26 @@
   grid-template-columns: auto auto;
   row-gap: 20px;
   margin-left: 50px;
+
+  &.two-column {
+    column-gap: 20px;
+  }
+}
+
+.dialog-control {
+  padding-top: 2rem;
+}
+
+::ng-deep .custom-panel-right-0 {
+  right: 0;
+
+  ul.p-dropdown-items {
+    width: fit-content;
+  }
+
+  li.p-dropdown-item {
+    overflow: unset;
+  }
 }
 
 .statusbodyModal {

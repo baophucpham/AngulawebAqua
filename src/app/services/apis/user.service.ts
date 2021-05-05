@@ -1,9 +1,10 @@
+import { UserModel } from './../../models/listUser.model';
 import { map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
-import { ListUser } from "src/app/models/listUser.model";
+import { ListUser } from 'src/app/models/listUser.model';
 
 @Injectable()
 export class ListUserService {
@@ -39,28 +40,25 @@ export class ListUserService {
     'Teal T-Shirt',
     'Yellow Earbuds',
     'Yoga Mat',
-    'Yoga Set'
+    'Yoga Set',
   ];
 
   baseUrl = environment.baseUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getListUser(params: {
-    keyWord?: string;
-    role?: string;
-  }): Observable<any> {
-    const { keyWord,role} = params;
+  getListUser(params: { keyWord?: string; role?: string }): Observable<any> {
+    const { keyWord, role } = params;
     const getParams = new HttpParams()
       .set('keyWord', keyWord || '')
-      .set('role', role || '')
+      .set('role', role || '');
     return this.http
       .get(`${this.baseUrl}/user`, {
         params: getParams,
         headers: {
           Authorization:
-            'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MSIsImF1dGgiOiJhZG1pbiIsImlhdCI6MTYyMDEzMDg3NSwiZXhwIjoxNjIwMTM4MDc1fQ.JSb1aquICqaMn2pgy4yRzQZKL46WYgrCyROohrCVou6nGagdVFKyblA9eQ2vKUn1TKE2O9aydo8mqcTGcpeiOQ'
-        }
+            'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MSIsImF1dGgiOiJhZG1pbiIsImlhdCI6MTYyMDEzMDg3NSwiZXhwIjoxNjIwMTM4MDc1fQ.JSb1aquICqaMn2pgy4yRzQZKL46WYgrCyROohrCVou6nGagdVFKyblA9eQ2vKUn1TKE2O9aydo8mqcTGcpeiOQ',
+        },
       })
       .pipe(map((res: any) => res.map((r: any) => new ListUser(r))));
   }
@@ -76,7 +74,7 @@ export class ListUserService {
     shop_code: string,
     shop_name: string,
     user_name: string,
-    user_name_bank:string,
+    user_name_bank: string
   ) {
     const bodyCreateRequest = {
       account_number,
@@ -90,8 +88,44 @@ export class ListUserService {
       shop_name,
       user_name,
       user_name_bank,
-    }
-    return this.http.post<any>(`${environment.baseUrl}/user`, bodyCreateRequest);
+    };
+    return this.http.post<any>(
+      `${environment.baseUrl}/user`,
+      bodyCreateRequest
+    );
   }
 
+  updateUserDetail(data: {
+    user_id: string;
+    account_number: string;
+    avatar: string;
+    bank_name: string;
+    email: string;
+    id_card: string;
+    is_active: boolean;
+    phone: string;
+    shop_code: string;
+    shop_name: string;
+    user_name: string;
+    user_name_bank: string;
+  }): Observable<any> {
+    return this.http.put(`${environment.baseUrl}/user/${data.user_id}`,
+      data,
+      {
+        headers: {
+          Authorization:
+          'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MSIsImF1dGgiOiJhZG1pbiIsImlhdCI6MTYyMDEzMDg3NSwiZXhwIjoxNjIwMTM4MDc1fQ.JSb1aquICqaMn2pgy4yRzQZKL46WYgrCyROohrCVou6nGagdVFKyblA9eQ2vKUn1TKE2O9aydo8mqcTGcpeiOQ',
+        }
+      }
+    );
+  }
+
+  getUserDetail(id: string ): Observable<any>{
+    return this.http.get(`${this.baseUrl}/user/${id}`, {
+      headers: {
+        Authorization:
+          'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MSIsImF1dGgiOiJhZG1pbiIsImlhdCI6MTYyMDEzMDg3NSwiZXhwIjoxNjIwMTM4MDc1fQ.JSb1aquICqaMn2pgy4yRzQZKL46WYgrCyROohrCVou6nGagdVFKyblA9eQ2vKUn1TKE2O9aydo8mqcTGcpeiOQ',
+      }
+    }).pipe(map((res: any) => new UserModel(res)));
+  }
 }
