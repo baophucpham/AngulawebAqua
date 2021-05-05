@@ -29,6 +29,7 @@ import { PPCService } from 'src/app/services/apis/ppc.service';
 import { DateCompactPipe } from 'src/app/pipes/date-pipe/date-compact.pipe';
 import { ListUserService } from 'src/app/services/apis/user.service';
 import { Listbank } from "src/app/services/apis/bank.service";
+import { DateTimePipe } from 'src/app/pipes/date-pipe/date-time.pipe';
 
 @NgModule({
   imports: [
@@ -58,7 +59,8 @@ import { Listbank } from "src/app/services/apis/bank.service";
     CommonComponent,
     ListPPCComponent,
     ListUserComponent,
-    DateCompactPipe
+    DateCompactPipe,
+    DateTimePipe
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ProductService, PPCService, ListUserService,Listbank]

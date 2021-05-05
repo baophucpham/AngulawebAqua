@@ -3,7 +3,11 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { detailResult, ListPPc } from './../../mocks/data';
 import { delay, tap, map } from 'rxjs/operators';
-import { PPCModel } from 'src/app/models/ppc.model';
+import {
+  PPCDetailModel,
+  PPCDetailValidationModel,
+  PPCItemModel
+} from 'src/app/models/ppc.model';
 import { environment } from 'environments/environment';
 
 @Injectable()
@@ -46,6 +50,8 @@ export class PPCService {
   baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
+  accessToken =
+    'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MSIsImF1dGgiOiJhZG1pbiIsImlhdCI6MTYyMDEzMTcxNCwiZXhwIjoxNjIwMTM4OTE0fQ.HR_0_rNNuYwzouVao7n3BsYSfL6nA0WsNKzaC5NlqIwy-ydSZ3cE12cCtDq_P2vEiI1khB_jwwOT-BfB90DAUg';
 
   getListPPC(params: {
     keyWord?: string;
@@ -63,10 +69,60 @@ export class PPCService {
       .get(`${this.baseUrl}/process-pending-case`, {
         params: getParams,
         headers: {
-          Authorization:
-            'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MSIsImF1dGgiOiJhZG1pbiIsImlhdCI6MTYyMDExOTY4MiwiZXhwIjoxNjIwMTI2ODgyfQ.vMZ70_8809uQ_zf3RJeG5g9tPUn4k1OLYUGjmjhgPyZpJx3juHa-iCtlT6-hmGEPFZ4z4Vnc8Vpm-RWdAqJ3YA'
+          Authorization: this.accessToken
         }
       })
-      .pipe(map((res: any) => res.map((r: any) => new PPCModel(r))));
+      .pipe(map((res: any) => res.map((r: any) => new PPCItemModel(r))));
+  }
+
+  getPPCDetail(id: string): Observable<any> {
+    return this.http
+      .get(`${this.baseUrl}/process-pending-case/${id}`, {
+        headers: {
+          Authorization: this.accessToken
+        }
+      })
+      .pipe(map((res: any) => new PPCDetailModel(res)));
+  }
+
+  checkValidation(data: {
+    customer_name: string;
+    customer_phone: string;
+    id: string;
+    model_name: string;
+    sell_out_date: Date;
+    serial_number: string;
+  }): Observable<any> {
+    return this.http
+      .post(`${this.baseUrl}/process-pending-case/validation`, data, {
+        headers: {
+          Authorization: this.accessToken
+        }
+      })
+      .pipe(
+        map((res: any) => res.map((r: any) => new PPCDetailValidationModel(r)))
+      );
+  }
+
+  updatePPC(data: {
+    customer_name: string;
+    customer_phone: string;
+    model_name: string;
+    sell_out_date: Date;
+    id: string;
+    serial_number: string;
+    note: string;
+    status: string;
+    validation: PPCDetailValidationModel[];
+  }): Observable<any> {
+    return this.http.put(
+      `${this.baseUrl}/process-pending-case/${data.id}`,
+      data,
+      {
+        headers: {
+          Authorization: this.accessToken
+        }
+      }
+    );
   }
 }
